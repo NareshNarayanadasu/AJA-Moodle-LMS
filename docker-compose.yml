@@ -7,7 +7,7 @@ services:
       - "8080:80"
     volumes:
       - ./moodle:/var/www/html
-      - $MOODLEDATA_HOST_DIR:/var/www/moodledata
+      - "${MOODLEDATA_HOST_DIR}:/var/www/moodledata"
     depends_on:
       - db
     environment:

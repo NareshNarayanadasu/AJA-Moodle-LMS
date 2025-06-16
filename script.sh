@@ -4,14 +4,11 @@
 # Moodle Docker Setup Script (Ubuntu)
 # ----------------------------
 
-# ---- VARIABLES ----
-export MOODLE_VERSION="MOODLE_405_STABLE"
-export INSTALL_DIR="/home/ubuntu/AJA-Moodle-LMS"
-export BACKUP_DIR="$INSTALL_DIR/backups"
-export MOODLEDATA_HOST_DIR="$INSTALL_DIR/moodledata"
-export PORT="8080"
-export PUBLIC_IP="54.152.229.226"
-THEME_ZIP="/home/ubuntu/theme_academi_moodle50_2025050301.zip"
+set -a  # Automatically export all variables
+source /home/ubuntu/AJA-Moodle-LMS/.env
+set +a 
+echo "Moodle version: $MOODLE_VERSION"
+echo "Install directory: $INSTALL_DIR"
 
 # ---- STEP 1: Install Docker and Git ----
 echo "=== 1. Installing Docker and Git ==="
