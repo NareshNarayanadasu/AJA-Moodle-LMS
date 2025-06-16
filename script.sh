@@ -56,6 +56,8 @@ sudo docker-compose up -d --build
 echo "=== 12. Fixing permissions for config.php inside container ==="
 sudo docker exec moodle-app chown www-data:www-data /var/www/html/config.php
 sudo docker exec moodle-app chmod 644 /var/www/html/config.php
+sudo docker exec moodle-app chown -R www-data:www-data /var/www/html/theme
+sudo docker exec moodle-app chmod -R 755 /var/www/html/theme
 
 # ---- STEP 13: Restart containers ----
 echo "=== 13. Restarting Docker containers ==="
