@@ -5,12 +5,12 @@
 # ----------------------------
 
 # ---- VARIABLES ----
-MOODLE_VERSION="MOODLE_405_STABLE"
-INSTALL_DIR="/home/ubuntu/AJA-Moodle-LMS"
-BACKUP_DIR="$INSTALL_DIR/backups"
-MOODLEDATA_HOST_DIR="/home/ubuntu/AJA-Moodle-LMS/moodledata"
-PORT="8080"
-PUBLIC_IP="54.152.229.226"
+export MOODLE_VERSION="MOODLE_405_STABLE"
+export INSTALL_DIR="/home/ubuntu/AJA-Moodle-LMS"
+export BACKUP_DIR="$INSTALL_DIR/backups"
+export MOODLEDATA_HOST_DIR="$INSTALL_DIR/moodledata"
+export PORT="8080"
+export PUBLIC_IP="54.152.229.226"
 THEME_ZIP="/home/ubuntu/theme_academi_moodle50_2025050301.zip"
 
 # ---- STEP 1: Install Docker and Git ----

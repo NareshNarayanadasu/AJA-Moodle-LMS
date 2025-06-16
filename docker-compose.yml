@@ -7,7 +7,7 @@ services:
       - "8080:80"
     volumes:
       - ./moodle:/var/www/html
-      - /home/ubuntu/AJA-Moodle-LMS/moodledata:/var/www/moodledata
+      - $MOODLEDATA_HOST_DIR:/var/www/moodledata
     depends_on:
       - db
     environment:
