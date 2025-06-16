@@ -1,3 +1,4 @@
+
 services:
   moodle:
     build: .
@@ -6,7 +7,7 @@ services:
       - "8080:80"
     volumes:
       - ./moodle:/var/www/html
-      - /home/ubuntu/moodledata:/var/www/moodledata
+      - /home/ubuntu/AJA-Moodle-LMS/moodledata:/var/www/moodledata
     depends_on:
       - db
     environment:

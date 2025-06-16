@@ -6,11 +6,11 @@
 
 # ---- VARIABLES ----
 MOODLE_VERSION="MOODLE_405_STABLE"
-INSTALL_DIR="/home/ubuntu/moodle-docker"
+INSTALL_DIR="/home/ubuntu/AJA-Moodle-LMS"
 BACKUP_DIR="$INSTALL_DIR/backups"
-MOODLEDATA_HOST_DIR="/home/ubuntu/moodledata"
+MOODLEDATA_HOST_DIR="/home/ubuntu/AJA-Moodle-LMS/moodledata"
 PORT="8080"
-PUBLIC_IP="3.86.146.11"
+PUBLIC_IP="54.152.229.226"
 THEME_ZIP="/home/ubuntu/theme_academi_moodle50_2025050301.zip"
 
 # ---- STEP 1: Install Docker and Git ----
@@ -31,21 +31,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 echo "=== 3. Setting up Moodle folder structure ==="
 mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR"
 
-if [ ! -d "$INSTALL_DIR/moodle/.git" ]; then
-  git clone -b "$MOODLE_VERSION" git://git.moodle.org/moodle.git moodle
-else
-  echo "Moodle directory already exists. Skipping clone."
-fi
-
 mkdir -p moodledata backups
 sudo mkdir -p $MOODLEDATA_HOST_DIR
 sudo chown -R 33:33 $MOODLEDATA_HOST_DIR
 sudo chmod -R 755 $MOODLEDATA_HOST_DIR
 
-# ---- STEP 4: Fix moodledata permissions ----
-echo "=== 4. Fixing permissions for moodledata ==="
-sudo chown -R 33:33 moodledata
-sudo chmod -R 755 moodledata
+#sudo chown -R 33:33 /home/ubuntu/AJA-Moodle-LMS/moodledata
+#sudo chmod -R 755 /home/ubuntu/AJA-Moodle-LMS/moodledata
+
 
 
 
